@@ -6,18 +6,32 @@ public class BirdController : MonoBehaviour
 {
     private Rigidbody2D rb;
 
-    public float flyForce=200f;
-    void Awake(){
+    private bool isDead;
+
+    public float flyForce = 200f;
+    void Awake()
+    {
 
         rb = GetComponent<Rigidbody2D>();
+        isDead = false;
     }
 
     void Update()
     {
-        if(Input.GetMouseButtonDown(0)){
+        if (!isDead)
+        {
+            if (Input.GetMouseButtonDown(0))
+            {
 
-            rb.velocity = Vector2.zero;
-            rb.AddForce(new Vector2(0,flyForce));
+                rb.velocity = Vector2.zero;
+                rb.AddForce(new Vector2(0, flyForce));
+            }
         }
+
+    }
+
+    private void OnCollisionEnter2D(Collision2D other)
+    {
+        isDead = true;
     }
 }
