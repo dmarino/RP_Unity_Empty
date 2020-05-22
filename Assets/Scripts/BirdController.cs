@@ -9,6 +9,7 @@ public class BirdController : MonoBehaviour
     private bool isDead;
 
     public float flyForce = 200f;
+    public float forwardForce = 100f;
     void Awake()
     {
 
@@ -24,7 +25,7 @@ public class BirdController : MonoBehaviour
             {
 
                 rb.velocity = Vector2.zero;
-                rb.AddForce(new Vector2(0, flyForce));
+                rb.AddForce(new Vector2(forwardForce, flyForce));
             }
         }
 
