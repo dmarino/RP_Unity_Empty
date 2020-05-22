@@ -17,12 +17,17 @@ public class Points : MonoBehaviour
 
     public Text _currentScore;
     public Text _highscore;
+    public Text _Deaths;
     
+    private int _playerDeaths;
 
     private void Start()
     {
         _currentScore.text = _runScore.ToString();
         _highscore.text = PlayerPrefs.GetInt("HighScore", 0).ToString();
+        _Deaths.text = PlayerPrefs.GetInt("Deaths", 0).ToString();
+
+        
     }
     void Update()
     {

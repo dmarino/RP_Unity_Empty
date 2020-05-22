@@ -9,7 +9,6 @@ public class BirdController : MonoBehaviour
     private bool isDead;
 
     public float flyForce = 200f;
-    public float forwardForce = 100f;
     void Awake()
     {
 
