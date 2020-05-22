@@ -25,7 +25,7 @@ public class BirdController : MonoBehaviour
             {
 
                 rb.velocity = Vector2.zero;
-                rb.AddForce(new Vector2(forwardForce, flyForce));
+                rb.AddForce(new Vector2(0, flyForce));
             }
         }
 
