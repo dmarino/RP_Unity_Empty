@@ -7,9 +7,6 @@ using UnityEngine.UI;
 public class Points : MonoBehaviour
 {
 
-    
-    
-
     [SerializeField]
     public GameObject _pipe;
 
@@ -24,6 +21,7 @@ public class Points : MonoBehaviour
 
     private void Start()
     {
+        _currentScore.text = _runScore.ToString();
         _highscore.text = PlayerPrefs.GetInt("HighScore", 0).ToString();
     }
     void Update()
@@ -37,8 +35,6 @@ public class Points : MonoBehaviour
         {
             Scoring();
         }
-
-
     }
 
     private void Scoring()
